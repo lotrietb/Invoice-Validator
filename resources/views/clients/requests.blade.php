@@ -29,8 +29,8 @@
                                     @foreach ($client_requests as $client_request)
                                         <tr>
                                             <td>{{ $client_request->created_at }}</td>
-                                            <td>{{ $client_request->request_string }}</td>
-                                            <td>{{ $client_request->response_string }}</td>
+                                            <td><pre>{{ $client_request->request_string }}</pre></td>
+                                            <td><pre>{{ $client_request->response_string }}</pre></td>
                                             <td>{{ $client_request->response_status }}</td>
                                         </tr>
                                     @endforeach
@@ -48,4 +48,13 @@
     </div>
 </div>
 
+@endsection
+
+@section('my_css')
+<style type="text/css">
+    pre {
+        max-width: 445px;
+        max-height: 150px;
+    }
+</style>
 @endsection
