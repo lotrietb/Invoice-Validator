@@ -21,7 +21,7 @@ class ValidateController extends Controller
     {
     	$data = json_decode($request->getContent());
 
-    	$schema = json_decode(file_get_contents(url('/json/schema.json')));
+    	$schema = json_decode(file_get_contents(__DIR__. '/../../../public/json/schema.json'));
 
 		// Validate
 		$validator = new JsonSchema\Validator;
