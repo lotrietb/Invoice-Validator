@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "title": "Rhino Africa Assessment V2",
+  "description": "Your application should only accept json which validates to this schema.",
+  "type": "object",
+  "properties": {
+    "invoice": {
+      "id": "invoice",
+      "type": "object",
+      "properties": {
+        "number": {
+          "id": "number",
+          "type": "string"
+        },
+        "date": {
+          "id": "created",
+          "type": "string",
+          "format": "date-time"
+        },
+        "client_id": {
+          "id": "client_id",
+          "type": "integer"
+        },
+        "line_items": {
+          "id": "line_items",
+          "type": "array",
+          "items": {
+            "id": "0",
+            "type": "object",
+            "properties": {
+              "id": {
+                "id": "id",
+                "type": "integer"
+              },
+              "name": {
+                "id": "name",
+                "type": "string"
+              },
+              "price": {
+                "id": "price",
+                "type": "number",
+                "maxDecimal": 2
+              },
+              "currency": {
+                "id": "currency",
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 3
+              },
+              "quantity": {
+                "id": "quantity",
+                "type": "integer",
+                "multipleOf": 1,
+                "maximum": 100,
+                "minimum": 1
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "price",
+              "currency",
+              "quantity"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "number",
+        "date",
+        "client_id",
+        "line_items"
+      ]
+    }
+  },
+  "required": [
+    "invoice"
+  ]
+}

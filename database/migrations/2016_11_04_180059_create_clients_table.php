@@ -21,7 +21,6 @@ class CreateClientsTable extends Migration
             $table->string('description');
             $table->string('ip_address_start');
             $table->string('ip_address_end')->nullable();
-            $table->string('api_token');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });

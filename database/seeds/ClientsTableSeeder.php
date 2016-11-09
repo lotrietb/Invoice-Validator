@@ -13,11 +13,11 @@ class ClientsTableSeeder extends Seeder
     {
          DB::table('clients')->insert([
             'uuid' => 'd8176563-a708-4b84-8109-7e66554fe03e',
-            'password' => bcrypt('admin'),
+            'password' => 'admin',
             'name' => 'Test Client',
             'description' => 'This is a test client added using the seeder.',
-            'ip_address_start' => '196.132.211.71',
-            'api_token' => str_random(60),
+            'ip_address_start' => '127.0.0.1',
+            'ip_address_end' => '127.255.255.255',
         ]);
     }
 }
